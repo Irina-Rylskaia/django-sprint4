@@ -1,27 +1,24 @@
 from typing import Tuple, Union
 
 import bs4
-from django.db.models import QuerySet, Model
+from conftest import TitledUrlRepr
+from django.db.models import Model, QuerySet
 from django.forms import BaseForm
 from django.http import HttpResponse
-
-from conftest import TitledUrlRepr
 from fixtures.types import ModelAdapterT
 from form.base_form_tester import (
-    FormTagMissingException,
+    AuthenticatedEditException,
+    BaseFormTester,
+    DatabaseCreationException,
     FormMethodException,
+    FormTagMissingException,
+    FormValidationException,
+    ItemCreatedException,
+    SubmitTester,
     TextareaMismatchException,
     TextareaTagMissingException,
-)
-from form.base_form_tester import (
-    SubmitTester,
-    FormValidationException,
-    BaseFormTester,
-    UnauthorizedEditException,
     UnauthenticatedEditException,
-    AuthenticatedEditException,
-    DatabaseCreationException,
-    ItemCreatedException,
+    UnauthorizedEditException,
 )
 
 
@@ -151,7 +148,7 @@ class EditCommentFormTester(BaseFormTester):
     @property
     def author_assignment_error_message(self) -> str:
         return (
-            "Убедитесь, что при редактировании комментария в поле \"автор\""
+            'Убедитесь, что при редактировании комментария в поле "автор"'
             " передаётся аутентифицированный пользователь."
         )
 

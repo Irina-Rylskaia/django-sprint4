@@ -1,35 +1,34 @@
 from __future__ import annotations
 
 import re
-from abc import abstractmethod, ABC
+from abc import ABC, abstractmethod
 from functools import partial
 from http import HTTPStatus
 from typing import (
+    Any,
+    Callable,
+    Dict,
+    Iterable,
+    List,
+    Optional,
+    Sequence,
     Set,
     Tuple,
     Type,
-    Sequence,
-    Callable,
-    Optional,
-    Dict,
-    Iterable,
-    Any,
-    List,
     Union,
 )
 
 import bs4
 import django.test
+from conftest import (
+    ItemNotCreatedException,
+    TitledUrlRepr,
+    restore_cleaned_data,
+)
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.db.models import Model, QuerySet
 from django.forms import BaseForm
 from django.http import HttpResponse
-
-from conftest import (
-    ItemNotCreatedException,
-    restore_cleaned_data,
-    TitledUrlRepr,
-)
 from fixtures.types import ModelAdapterT
 from form.base_tester import BaseTester
 
@@ -98,10 +97,9 @@ class BaseFormTester(BaseTester):
         # Фильтруем, все кроме logout-формы
         candidates = []
         for f in forms:
-            if (
-                ("logout" not in ((f.get("action") or "").lower()))
-                and ("выйти" not in f.get_text(" ",strip=True).lower())
-                ):
+            if ("logout" not in ((f.get("action") or "").lower())) and (
+                "выйти" not in f.get_text(" ", strip=True).lower()
+            ):
                 candidates.append(f)
 
         if not candidates:
@@ -124,8 +122,7 @@ class BaseFormTester(BaseTester):
 
     @property
     @abstractmethod
-    def has_textarea(self):
-        ...
+    def has_textarea(self): ...
 
     @property
     def unauthorized_edit_redirect_cbk(self):
