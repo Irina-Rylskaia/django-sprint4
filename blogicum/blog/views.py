@@ -9,9 +9,10 @@ from django.shortcuts import (
 from django.utils import timezone
 from django.contrib.auth import get_user_model
 
-from blog.constants import POSTS_ON_INDEX, POSTS_ON_CATEGORY
+
 from .forms import PostForm, CommentForm, ProfileForm
 from .models import Category, Post, Comment
+from blog.constants import POSTS_ON_CATEGORY
 
 User = get_user_model()
 
@@ -20,7 +21,11 @@ POSTS_ON_INDEX = 10
 
 
 def get_posts_queryset():
-    return Post.objects.select_related("author", "category", "location").filter(
+    return Post.objects.select_related(
+        "author",
+        "category",
+        "location",
+    ).filter(
         is_published=True,
         pub_date__lte=timezone.now(),
         category__is_published=True,
@@ -50,9 +55,11 @@ def category_posts(request, slug):
         is_published=True,
     )
 
-    post_list = get_posts_queryset().filter(category=category).order_by("-pub_date")
-    paginator = Paginator(post_list, POSTS_ON_CATEGORY)
+    posts_qs = (
+        get_posts_queryset().filter(category=category).order_by("-pub_date")
+    )
 
+    paginator = Paginator(posts_qs, POSTS_ON_CATEGORY)
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
 
@@ -111,7 +118,11 @@ def post_edit(request, post_id):
     if post.author != request.user:
         return redirect("blog:post_detail", post_id=post.pk)
 
-    form = PostForm(request.POST or None, files=request.FILES or None, instance=post)
+    form = PostForm(
+        request.POST or None,
+        files=request.FILES or None,
+        instance=post,
+    )
 
     if form.is_valid():
         form.save()
