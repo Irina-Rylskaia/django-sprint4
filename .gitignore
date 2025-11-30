@@ -1,10 +1,7 @@
-# Byte-compiled / optimized / DLL files
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
-
-# C extensions
-*.so
 
 # Distribution / packaging
 .Python
@@ -27,24 +24,47 @@ share/python-wheels/
 *.egg
 MANIFEST
 
-# Logs / temp
-*.log
-*.tmp
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
 
-# Virtual environments
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Jupyter
+.ipynb_checkpoints
+
+# Environments
+.env
+.venv
 env/
 venv/
-.venv/
-.venv-sprint4/
+ENV/
+env.bak/
+venv.bak/
 
-# Databases
-db.sqlite3
-db.json
+# IDE
+.idea
+.spyproject
 
-# System files
-.DS_Store
-
-# Project specific
-sent_emails/
-staticfiles/
+# Static & media
 media/
+staticfiles/
+sent_emails/
