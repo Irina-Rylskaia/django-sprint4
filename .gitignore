@@ -67,4 +67,4 @@ venv.bak/
 # Static & media
 media/
 staticfiles/
-sent_emails/
+
