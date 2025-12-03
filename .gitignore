@@ -67,5 +67,3 @@ venv.bak/
 # Static & media
 media/
 staticfiles/
-
-.vscode
