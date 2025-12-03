@@ -68,3 +68,6 @@ venv.bak/
 media/
 staticfiles/
 .venv-sprint4/
+venv/
+.venv/
+.venv*/
