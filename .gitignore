@@ -53,12 +53,10 @@ db.sqlite3-journal
 
 # Environments
 .env
-.venv
-env/
+.venv/
 venv/
+env/
 ENV/
-env.bak/
-venv.bak/
 
 # IDE
 .idea
@@ -67,7 +65,9 @@ venv.bak/
 # Static & media
 media/
 staticfiles/
+
+# Sprint folders
 .venv-sprint4/
-venv/
-.venv/
-.venv*/
+
+# Emails dir
+sent_emails/
