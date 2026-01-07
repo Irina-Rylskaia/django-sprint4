@@ -1,0 +1,81 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Jupyter
+.ipynb_checkpoints
+
+# Environments
+.env
+.venv/
+venv/
+env/
+ENV/
+
+# IDE
+.idea
+.spyproject
+
+# Static & media
+media/
+staticfiles/
+
+# Sprint folders
+.venv-sprint4/
+
+# Emails dir
+sent_emails/
+venv/
+.venv/
+__pycache__/
+*.pyc
+db.sqlite3
+.env
+.idea/
+.vscode/

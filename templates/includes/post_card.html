@@ -1,0 +1,16 @@
+<div class="card mb-3">
+  <div class="card-body">
+    <h5 class="card-title">
+      <a href="{% url 'blog:post_detail' post.id %}">
+        {{ post.title }}
+      </a>
+    </h5>
+
+    {% if post.image %}
+      <img src="{{ post.image.url }}" class="img-fluid mb-2" alt="Изображение поста">
+    {% endif %}
+
+    <p>{{ post.text|truncatewords:20 }}</p>
+    <p class="text-muted">{{ post.pub_date }}</p>
+  </div>
+</div>

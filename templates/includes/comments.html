@@ -1,0 +1,32 @@
+{% load django_bootstrap5 %}
+
+<h5 class="mb-3">Комментарии ({{ post.comments.count }})</h5>
+
+{% for comment in post.comments.all %}
+  <div class="media mb-4">
+    <div class="media-body">
+
+      <h5 class="mt-0">
+        <a href="{% url 'blog:profile' comment.author.username %}">
+          @{{ comment.author.username }}
+        </a>
+      </h5>
+
+      <small class="text-muted">{{ comment.created_at|date:"d E Y H:i" }}</small>
+
+      {{ comment.text }}
+
+      {% if user == comment.author %}
+        <a class="btn btn-sm text-muted" href="{% url 'blog:edit_comment' post.id comment.id %}">
+          Редактировать
+        </a>
+        <a class="btn btn-sm text-muted" href="{% url 'blog:delete_comment' post.id comment.id %}">
+          Удалить
+        </a>
+      {% endif %}
+
+    </div>
+  </div>
+{% empty %}
+  <p>Комментариев пока нет.</p>
+{% endfor %}
