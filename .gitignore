@@ -1,20 +1,10 @@
-# Python
-__pycache__/
 *.py[cod]
+__pycache__/
 
-# Virtual environment
-venv/
-.venv/
-
-# Django
-*.log
 db.sqlite3
-local_settings.py
-
-# IDE
-.idea/
-.vscode/
-
-# Media & ZIP
+*.log
+.env
+.venv/
+venv/
 media/
 django-sprint4.zip
