@@ -10,11 +10,12 @@ venv/
 *.log
 db.sqlite3
 local_settings.py
+sent_emails/
 
 # IDE
 .idea/
 .vscode/
 
-# Media
+# Media & ZIP
 media/
-
+django-sprint4.zip
