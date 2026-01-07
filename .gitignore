@@ -71,11 +71,4 @@ staticfiles/
 
 # Emails dir
 sent_emails/
-venv/
-.venv/
-__pycache__/
-*.pyc
 db.sqlite3
-.env
-.idea/
-.vscode/
