@@ -73,3 +73,6 @@ staticfiles/
 sent_emails/
 db.sqlite3
 db.sqlite3
+media/
+media/
+db.sqlite3
