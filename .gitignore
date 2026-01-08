@@ -6,7 +6,9 @@
 __pycache__/
 *.py[cod]
 
-# SQLite / db
+# Database
 db.sqlite3
 db.json
 
+# Django media
+media/
