@@ -45,4 +45,4 @@ tests/**/__pycache__/
 *.swp
 .DS_Store
 
-sent_emails/
+#sent_emails/
