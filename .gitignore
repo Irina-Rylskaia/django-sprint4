@@ -1,0 +1,7 @@
+echo ".venv/
+__pycache__/
+*.pyc
+db.sqlite3
+media/
+sent_emails/" > .gitignore
+
