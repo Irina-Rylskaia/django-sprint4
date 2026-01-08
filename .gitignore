@@ -7,10 +7,10 @@ __pycache__/
 *.pyc
 *.pyo
 
-# Локальная база данных
+# База данных SQLite
 blogicum/db.sqlite3
 
-# Медиа файлы
+# Файлы медиа
 media/
 sent_emails/
 
