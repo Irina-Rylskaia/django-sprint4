@@ -1,47 +1,18 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
-
-# C extensions
-*.so
-
-# Virtual environments
-.venv/
+# виртуальное окружение
 .venv-sprint4/
 
-# Distribution / packaging
-build/
-dist/
-*.egg-info/
-*.egg
-*.whl
-pip-wheel-metadata/
-
-# Django stuff:
-*.sqlite3
-db.json
-media/
-
-# Logs
-*.log
-
-# Email test folder
-sent_emails/
-
 # Python cache
+__pycache__/
 *.pyc
+*.pyo
 
-# Pytest cache
-.pytest_cache/
+# media файлы
+media/
+sent_emails/   # если нужно тестам, оставляем .gitkeep
 
-# Migrations
-blogicum/**/migrations/__pycache__/
-tests/**/__pycache__/
+# база данных
+blogicum/db.sqlite3
 
-# IDE / editor files
+# IDE
 .vscode/
 .idea/
-*.swp
-.DS_Store
-
