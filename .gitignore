@@ -1,27 +1,7 @@
-# Python
-__pycache__/
-*.py[cod]
-
-# Virtual environment
-venv/
+.env
 .venv/
-
-# Django
-*.log
+.venv-sprint4/
+__pycache__/
+*.pyc
 db.sqlite3
-local_settings.py
-
-# IDE
-.idea/
-.vscode/
-
-# Media & ZIP
 media/
-django-sprint4.zip
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 03ad389 (Add .gitignore to root for tests)
-# E-mails
-sent_emails/
