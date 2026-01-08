@@ -1,4 +1,5 @@
-# виртуальное окружение
+# Виртуальное окружение
+.venv/
 .venv-sprint4/
 
 # Python cache
@@ -6,12 +7,12 @@ __pycache__/
 *.pyc
 *.pyo
 
-# media файлы
-media/
-sent_emails/   # если нужно тестам, оставляем .gitkeep
-
-# база данных
+# Локальная база данных
 blogicum/db.sqlite3
+
+# Медиа файлы
+media/
+sent_emails/
 
 # IDE
 .vscode/
