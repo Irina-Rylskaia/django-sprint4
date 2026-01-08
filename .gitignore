@@ -1,7 +1,19 @@
-echo ".venv/
+# Python
 __pycache__/
+*.py[cod]
+*.pyo
+*.pyd
 *.pyc
-db.sqlite3
-media/
-sent_emails/" > .gitignore
 
+# Virtual environments
+.venv/
+env/
+.venv-sprint4/
+
+# Media & static
+media/
+static/
+
+# IDE
+.vscode/
+.idea/
